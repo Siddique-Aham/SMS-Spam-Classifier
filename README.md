@@ -43,23 +43,39 @@ It comes with:
 
 ## 📂 Project Structure
 
-```
-📦 sms-spam-classifier
- ┣ 📂 data
- ┃ ┗ sms_spam.csv                  # Dataset (ham/spam labeled messages)
- ┣ 📂 models
- ┃ ┣ spam_classifier.pkl           # Trained ML model
- ┃ ┗ tfidf_vectorizer.pkl          # TF-IDF vectorizer
- ┣ 📂 static
- ┃ ┗ confusion_matrix.png          # Confusion matrix plot
- ┣ 📂 templates
- ┃ ┗ index.html                    # Frontend HTML template
- ┣ 📜 app.py                        # Flask web app
- ┣ 📜 predict_cli.py                # CLI spam checker
- ┣ 📜 train_model.py                # Model training script
- ┣ 📜 requirements.txt              # Dependencies
- ┗ 📜 README.md                     # Project documentation
-```
+
+sms-spam-classifier/
+│
+├── .venv/                # Virtual environment folder
+│   ├── Include/
+│   ├── Lib/
+│   ├── Scripts/
+│   └── pyvenv.cfg
+│
+├── .gitignore
+├── README.md
+├── requirements.txt
+│
+├── data/
+│   ├── sms_spam.csv
+│   └── models/
+│       ├── spam_classifier.pkl
+│       └── tfidf_vectorizer.pkl
+│
+├── notebooks/
+│   └── EDA.ipynb
+│
+├── src/
+│   ├── __pycache__/
+│   ├── app.py
+│   ├── predict_cli.py
+│   └── train_model.py
+│
+├── static/
+│   └── confusion_matrix.png
+│
+└── templates/
+    └── index.html
 
 ---
 
@@ -174,6 +190,7 @@ pip install -r requirements.txt
 * Libraries: Flask, Scikit-learn, NLTK, Pandas, Matplotlib, Seaborn
 
 ---
+
 
 
 
