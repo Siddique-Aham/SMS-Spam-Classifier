@@ -1,4 +1,3 @@
-
 # 📩 SMS Spam Classifier
 
 *A Machine Learning powered web app to detect spam messages, built with Flask & Scikit-learn*
@@ -46,47 +45,37 @@ It comes with:
 
 sms-spam-classifier/
 │
-├── .venv/                # Virtual environment folder
-│   ├── Include/
-│   ├── Lib/
-│   ├── Scripts/
-│   └── pyvenv.cfg
+├── .venv/ # Virtual environment folder
+│ ├── Include/
+│ ├── Lib/
+│ ├── Scripts/
+│ └── pyvenv.cfg
 │
-├── .gitignore
-├── README.md
-├── requirements.txt
+├── .gitignore # Git ignore file
+├── README.md # Project documentation
+├── requirements.txt # Python dependencies
 │
-├── data/
-│   ├── sms_spam.csv
-│   └── models/
-│       ├── spam_classifier.pkl
-│       └── tfidf_vectorizer.pkl
+├── data/ # Dataset and trained models
+│ ├── sms_spam.csv # Dataset file
+│ └── models/
+│ ├── spam_classifier.pkl # Trained model
+│ └── tfidf_vectorizer.pkl # TF-IDF vectorizer
 │
-├── notebooks/
-│   └── EDA.ipynb
+├── notebooks/ # Jupyter notebooks
+│ └── EDA.ipynb # Exploratory Data Analysis
 │
-├── src/
-│   ├── __pycache__/
-│   ├── app.py
-│   ├── predict_cli.py
-│   └── train_model.py
+├── src/ # Source code
+│ ├── pycache/
+│ ├── app.py # Flask web app
+│ ├── predict_cli.py # CLI prediction script
+│ └── train_model.py # Model training script
 │
-├── static/
-│   └── confusion_matrix.png
+├── static/ # Static files (images, CSS, JS)
+│ └── confusion_matrix.png # Model performance visualization
 │
-└── templates/
-    └── index.html
+└── templates/ # HTML templates
+└── index.html # Frontend page
 
----
-
-## 🛠 Installation & Setup
-
-### 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/Siddique-Aham/sms-spam-classifier.git
-cd sms-spam-classifier
-```
 
 ### 2️⃣ Install dependencies
 
@@ -101,7 +90,7 @@ import nltk
 nltk.download('stopwords')
 ```
 
-### 4️⃣ Train the model
+### 4️⃣ Train the models
 
 ```bash
 python train_model.py
