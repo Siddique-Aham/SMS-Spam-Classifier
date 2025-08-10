@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SMS Spam Classifier</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0d0d0d;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 800px;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        color: #00ff9d;
+        margin-bottom: 20px;
+        font-size: 28px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: #1a1a1a;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px rgba(0,255,157,0.15);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    textarea {
+        background: #0d0d0d;
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 12px;
+        min-height: 100px;
+        resize: none;
+        font-size: 15px;
+    }
+
+    textarea:focus {
+        border-color: #00ff9d;
+        outline: none;
+        box-shadow: 0 0 8px rgba(0,255,157,0.5);
+    }
+
+    button {
+        background: #00ff9d;
+        color: #000;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: #00cc7a;
+        transform: scale(1.05);
+    }
+
+    .result {
+        margin-top: 25px;
+        background: #1a1a1a;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,255,157,0.1);
+        animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    .prediction {
+        background: #0d0d0d;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .prediction.spam {
+        border-left: 5px solid red;
+    }
+
+    .prediction.ham {
+        border-left: 5px solid #00ff9d;
+    }
+
+    .reasons {
+        margin-top: 15px;
+        background: #141414;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        from {opacity: 0; transform: translateY(15px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>💬 SMS Spam Classifier</h1>
+        
+        <form method="POST">
+            <textarea name="message" placeholder="Type your message..." required>{{ message if message else '' }}</textarea>
+            <button type="submit">🔍 Check</button>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            <h2>📊 Prediction Result</h2>
+            <p><strong>Message:</strong> {{ message }}</p>
+            
+            <div class="prediction {{ result.prediction }}">
+                <p><strong>Prediction:</strong> {{ result.prediction.upper() }}</p>
+                <p><strong>Confidence:</strong> 
+                    Spam ({{ "%.2f"|format(result.confidence.spam * 100) }}%), 
+                    Ham ({{ "%.2f"|format(result.confidence.ham * 100) }}%)
+                </p>
+            </div>
+            
+            <div class="reasons">
+                <h3>📝 Reasons:</h3>
+                {% if result.top_words %}
+                <p><strong>Top contributing words:</strong></p>
+                <ul>
+                    {% for word, score in result.top_words %}
+                    <li>{{ word }} (weight: {{ "%.2f"|format(score) }})</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                
+                {% if result.analysis.has_url %}
+                <p>- Contains URL (common in spam)</p>
+                {% endif %}
+                
+                {% if result.analysis.special_chars > 2 %}
+                <p>- Contains {{ result.analysis.special_chars }} special characters</p>
+                {% endif %}
+                
+                {% if result.analysis.digit_count > 5 %}
+                <p>- Contains {{ result.analysis.digit_count }} digits (common in spam)</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
