@@ -5,6 +5,15 @@
 
 ![Confusion Matrix](static/confusion_matrix.png)
 
+# output 
+<img width="1869" height="861" alt="Screenshot 2025-08-10 224300" src="https://github.com/user-attachments/assets/880d567d-ffcd-4b60-a3c5-c810e3d86bc0" />
+<img width="1910" height="455" alt="Screenshot 2025-08-10 224241" src="https://github.com/user-attachments/assets/cf56817a-3182-4f0b-8592-a42d72bf094b" />
+<img width="1917" height="1089" alt="Screenshot 2025-08-10 224154" src="https://github.com/user-attachments/assets/6801548d-5795-4af3-a8ec-643cee035d0c" />
+
+# model accuracy 
+<img width="1904" height="1142" alt="Screenshot 2025-08-10 224651" src="https://github.com/user-attachments/assets/4509e2b3-160d-4421-8d4a-5289e4b40fe3" />
+
+
 ## 🚀 Overview
 
 This project is a **Spam Detection System** that uses **Natural Language Processing (NLP)** and **Machine Learning** to classify SMS messages as **Spam** or **Ham (Not Spam)**.
@@ -165,5 +174,6 @@ pip install -r requirements.txt
 * Libraries: Flask, Scikit-learn, NLTK, Pandas, Matplotlib, Seaborn
 
 ---
+
 
 
