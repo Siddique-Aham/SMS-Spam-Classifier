@@ -1,13 +1,18 @@
+
+
+```markdown
 # 📩 SMS Spam Classifier
 
 *A Machine Learning powered web app to detect spam messages, built with Flask & Scikit-learn*
 
 ![Confusion Matrix](static/confusion_matrix.png)
 
-# output 
-<img width="1869" height="861" alt="Screenshot 2025-08-10 224300" src="https://github.com/user-attachments/assets/880d567d-ffcd-4b60-a3c5-c810e3d86bc0" />
-<img width="1910" height="455" alt="Screenshot 2025-08-10 224241" src="https://github.com/user-attachments/assets/cf56817a-3182-4f0b-8592-a42d72bf094b" />
+# output
+
+
 <img width="1917" height="1089" alt="Screenshot 2025-08-10 224154" src="https://github.com/user-attachments/assets/6801548d-5795-4af3-a8ec-643cee035d0c" />
+<img width="1910" height="455" alt="Screenshot 2025-08-10 224241" src="https://github.com/user-attachments/assets/cf56817a-3182-4f0b-8592-a42d72bf094b" />
+<img width="1869" height="861" alt="Screenshot 2025-08-10 224300" src="https://github.com/user-attachments/assets/880d567d-ffcd-4b60-a3c5-c810e3d86bc0" />
 
 # model accuracy 
 <img width="1904" height="1142" alt="Screenshot 2025-08-10 224651" src="https://github.com/user-attachments/assets/4509e2b3-160d-4421-8d4a-5289e4b40fe3" />
@@ -26,62 +31,66 @@ It comes with:
 
 ## ✨ Features
 
-✅ Web-based & CLI support
-✅ Message preprocessing (stopwords removal, punctuation cleaning)
-✅ TF-IDF vectorization for text features
-✅ Multinomial Naive Bayes model for classification
-✅ Confidence scores for spam & ham predictions
+✅ Web-based & CLI support  
+✅ Message preprocessing (stopwords removal, punctuation cleaning)  
+✅ TF-IDF vectorization for text features  
+✅ Multinomial Naive Bayes model for classification  
+✅ Confidence scores for spam & ham predictions  
 ✅ Highlighting spam indicators:
-
 * Presence of URLs
 * Special character count
-* High digit count
-  ✅ Confusion matrix visualization
+* High digit count  
+
+✅ Confusion matrix visualization  
 
 ---
 
 ## 📂 Project Structure
 
+```
 
 sms-spam-classifier/
 │
-├── .venv/ # Virtual environment folder
-│ ├── Include/
-│ ├── Lib/
-│ ├── Scripts/
-│ └── pyvenv.cfg
+├── .venv/                     # Virtual environment folder
+│   ├── Include/
+│   ├── Lib/
+│   ├── Scripts/
+│   └── pyvenv.cfg
 │
-├── .gitignore # Git ignore file
-├── README.md # Project documentation
-├── requirements.txt # Python dependencies
+├── .gitignore                  # Git ignore file
+├── README.md                   # Project documentation
+├── requirements.txt            # Python dependencies
 │
-├── data/ # Dataset and trained models
-│ ├── sms_spam.csv # Dataset file
-│ └── models/
-│ ├── spam_classifier.pkl # Trained model
-│ └── tfidf_vectorizer.pkl # TF-IDF vectorizer
+├── data/                       # Dataset and trained models
+│   ├── sms\_spam.csv            # Dataset file
+│   └── models/
+│       ├── spam\_classifier.pkl     # Trained model
+│       └── tfidf\_vectorizer.pkl    # TF-IDF vectorizer
 │
-├── notebooks/ # Jupyter notebooks
-│ └── EDA.ipynb # Exploratory Data Analysis
+├── notebooks/                  # Jupyter notebooks
+│   └── EDA.ipynb                # Exploratory Data Analysis
 │
-├── src/ # Source code
-│ ├── pycache/
-│ ├── app.py # Flask web app
-│ ├── predict_cli.py # CLI prediction script
-│ └── train_model.py # Model training script
+├── src/                        # Source code
+│   ├── **pycache**/
+│   ├── app.py                   # Flask web app
+│   ├── predict\_cli.py           # CLI prediction script
+│   └── train\_model.py           # Model training script
 │
-├── static/ # Static files (images, CSS, JS)
-│ └── confusion_matrix.png # Model performance visualization
+├── static/                     # Static files (images, CSS, JS)
+│   └── confusion\_matrix.png     # Model performance visualization
 │
-└── templates/ # HTML templates
-└── index.html # Frontend page
+└── templates/                   # HTML templates
+└── index.html               # Frontend page
 
+````
+
+---
 
 ### 2️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
-```
+````
 
 ### 3️⃣ Download NLTK stopwords
 
@@ -144,7 +153,6 @@ Reasons:
 
 ---
 
-
 ## 📦 Requirements
 
 * Python 3.7+
@@ -174,12 +182,11 @@ pip install -r requirements.txt
 
 ---
 
-
 * Dataset: [UCI SMS Spam Collection](https://archive.ics.uci.edu/ml/datasets/sms+spam+collection)
 * Libraries: Flask, Scikit-learn, NLTK, Pandas, Matplotlib, Seaborn
 
----
+```
 
 
-
-
+Agar tum chaho to main isme **table of contents** bhi add kar sakta hoon taaki README scroll karna easy ho jaye.
+```
