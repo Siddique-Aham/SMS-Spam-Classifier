@@ -1,6 +1,4 @@
 
-
-```markdown
 # 📩 SMS Spam Classifier
 
 *A Machine Learning powered web app to detect spam messages, built with Flask & Scikit-learn*
@@ -190,3 +188,4 @@ pip install -r requirements.txt
 
 Agar tum chaho to main isme **table of contents** bhi add kar sakta hoon taaki README scroll karna easy ho jaye.
 ```
+
